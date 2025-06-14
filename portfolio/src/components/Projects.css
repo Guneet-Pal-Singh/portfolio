@@ -1,0 +1,26 @@
+/* Styles for Projects component */
+.projects-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  list-style: none;
+  padding: 0;
+  justify-content: center;
+}
+.project-item {
+  background: transparent;
+  color: var(--accent);
+  padding: 1.1rem 2.5rem;
+  border-radius: 32px 8px 32px 8px;
+  font-weight: 600;
+  font-size: 1.15rem;
+  margin-bottom: 0.5rem;
+  box-shadow: none;
+  border: none;
+  transition: background 0.2s, color 0.2s;
+}
+.project-item:hover {
+  background: rgba(0,255,247,0.10);
+  color: #fff;
+  box-shadow: none;
+}

@@ -1,0 +1,26 @@
+/* Galaxy nebula gradient background for the whole site, with a darker/black base */
+body, #root {
+  min-height: 100vh;
+  min-width: 100vw;
+  margin: 0;
+  padding: 0;
+  /* Galaxy-inspired gradient: black base with subtle purple/blue nebula */
+  background: radial-gradient(ellipse at 60% 20%, #2d004d 0%, #000014 40%, #000000 100%),
+              radial-gradient(ellipse at 20% 80%, rgba(0, 0, 64, 0.5) 0%, rgba(34,34,54,0.2) 60%, rgba(10,10,19,0.5) 100%);
+  background-color: #000000;
+  background-blend-mode: lighten;
+  overflow-x: hidden;
+}
+
+/* Ensure the canvas is always behind content */
+.StarsBackground-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Styles for StarsBackground component */
