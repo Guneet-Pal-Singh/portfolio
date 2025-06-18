@@ -18,13 +18,14 @@
   pointer-events: none;
 }
 .hero-astronaut-img {
-  width: 300px;
+  width: 18vw; /* Responsive width, scales with viewport */
+  max-width: 320px;
+  min-width: 120px;
   height: auto;
   z-index: 2;
   position: absolute;
-  left: 10px; /* 180px keeps the astronaut fully in view */
-  top: 50vh;
-  transform: translateY(-50%);
-  pointer-events: auto;
-  cursor: grab;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
 }

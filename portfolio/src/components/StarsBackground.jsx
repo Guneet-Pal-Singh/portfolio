@@ -1,8 +1,10 @@
 import React, { useRef, useEffect } from 'react';
 import './StarsBackground.css';
 
+// Dynamically set star count based on screen width
+const getStarCount = () => (window.innerWidth < 768 ? 50 : 150);
+let STAR_COUNT = getStarCount();
 const STAR_COLOR = '#ffffff';
-const STAR_COUNT = 150; // Reduced number of stars
 const STAR_SPEED = 1.5; // Increased speed for movement towards mouse
 
 function randomBetween(a, b) {
@@ -38,6 +40,7 @@ const StarsBackground = () => {
       height = window.innerHeight;
       canvas.width = width;
       canvas.height = height;
+      STAR_COUNT = getStarCount(); // Update star count on resize
       starsRef.current = Array.from({ length: STAR_COUNT }, () => createStar(width, height));
     }
 
