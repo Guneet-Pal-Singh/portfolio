@@ -2,9 +2,9 @@
 :root {
   font-family: -apple-system, BlinkMacSystemFont, "San Francisco", "Segoe UI", Arial, sans-serif;
   color-scheme: dark;
-  color: #00fff7;
+  color: #a262f0;
   background-color: #000;
-  --accent: #00fff7;
+  --accent: #a262f0;
   --bg-glass: rgba(0,0,0,0.82);
   --bg-glass-light: rgba(0,255,247,0.08);
   --shadow: 0 8px 32px 0 rgba(0,255,247,0.18);
@@ -41,7 +41,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 p, li, a, span {
-  color: #b2ffff;
+  color: #fff;
   font-weight: 500;
   line-height: 1.6;
 }
@@ -52,7 +52,7 @@ a {
   transition: color 0.2s;
 }
 a:hover {
-  color: #fff;
+  color: #a262f0;
 }
 
 /* --- Section Styles --- */
@@ -108,6 +108,6 @@ section:hover {
   background: #000;
 }
 ::-webkit-scrollbar-thumb {
-  background: #00fff7;
+  background: #a262f0;
   border-radius: 8px;
 }

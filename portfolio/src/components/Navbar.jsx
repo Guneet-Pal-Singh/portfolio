@@ -43,20 +43,43 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close menu on resize if desktop
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth > 900 && menuOpen) setMenuOpen(false);
+    };
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, [menuOpen]);
+
   return (
     <header className={`navbar-header${scrolled ? " navbar-blur" : ""}`}>
       <nav className="navbar-new">
         <div className="navbar-brand">
           <span className="navbar-logo-glow">Portfolio</span>
         </div>
-        <ul className={`navbar-menu${menuOpen ? " show" : ""}`}>
+        {/* Hamburger menu button for mobile */}
+        <button
+          className={`navbar-toggle${menuOpen ? " open" : ""}`}
+          aria-label={menuOpen ? "Close menu" : "Open menu"}
+          aria-expanded={menuOpen}
+          aria-controls="mobile-menu"
+          onClick={() => setMenuOpen((open) => !open)}
+        >
+          <span className="bar"></span>
+          <span className="bar"></span>
+          <span className="bar"></span>
+        </button>
+        {/* Desktop nav links */}
+        <ul className="navbar-menu desktop-menu">
           {navLinks.map((link) => (
             <li key={link.href}>
-              <a href={link.href} onClick={() => setMenuOpen(false)}>{link.label}</a>
+              <a href={link.href}>{link.label}</a>
             </li>
           ))}
         </ul>
-        <div className="navbar-social navbar-social-right">
+        {/* Desktop social icons */}
+        <div className="navbar-social navbar-social-right desktop-menu">
           {socialLinks.map((link, idx) => (
             <a
               key={link.href}
@@ -79,6 +102,39 @@ const Navbar = () => {
             </a>
           ))}
         </div>
+        {/* Mobile menu: nav links + social icons */}
+        {menuOpen && (
+          <div className="mobile-menu" id="mobile-menu">
+            <ul className="mobile-nav-links">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a href={link.href} onClick={() => setMenuOpen(false)}>{link.label}</a>
+                </li>
+              ))}
+            </ul>
+            <div className="mobile-social-links">
+              {socialLinks.map((link, idx) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={link.label}
+                  className="navbar-social-icon"
+                >
+                  <img
+                    src={link.iconWhite}
+                    alt={link.label}
+                    className="navbar-social-img"
+                    width={28}
+                    height={28}
+                    style={{ display: "block" }}
+                  />
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
       </nav>
     </header>
   );

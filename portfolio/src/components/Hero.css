@@ -265,20 +265,56 @@
 
 @media (max-width: 600px) {
   .hero-content {
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
     max-width: 100vw;
     width: 100vw;
-    padding: 2rem 0.5rem 1.5rem 0.5rem;
-    padding-left: 3rem;
-    padding-bottom: 3rem;
+    padding: 1.2rem 0.5rem 1.2rem 0.5rem;
     border-radius: 14px 6px 14px 6px;
+    gap: 0.7rem;
+  }
+  .hero-content > div {
+    margin-left: 0;
+    align-items: center !important;
+    text-align: center !important;
+    max-width: 95vw;
+  }
+  .hero-content .hero-name {
+    font-size: 1.3rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+  .hero-content .animated-slidein {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+  .hero-content .animated-slidein-delay2 {
+    font-size: 1.05rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+  .hero-content .animated-fadein-delay3 {
+    font-size: 0.95rem !important;
+    margin-bottom: 0.7rem !important;
+    max-width: 90vw;
+    color: #e0e0e0 !important;
+    line-height: 1.6 !important;
+    letter-spacing: 0.01em !important;
+  }
+  .hero-btn {
+    font-size: 1rem !important;
+    padding: 0.7rem 1.5rem !important;
+    margin-bottom: 1.1rem !important;
+  }
+  .hero-content .hero-image, .hero-content > div:last-child, .hero-content svg, .hero-content img, .hero-content .HeroAstronaut {
+    display: none !important;
   }
 }
 @media (max-width: 400px) {
-  .hero-content h1 {
-    font-size: 1.3rem;
+  .hero-content .hero-name {
+    font-size: 1rem !important;
   }
-  .hero-content h2 {
-    font-size: 0.9rem;
+  .hero-content .animated-slidein-delay2 {
+    font-size: 0.8rem !important;
   }
 }
 @media (max-width: 700px) {
